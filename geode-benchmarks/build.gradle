@@ -148,7 +148,7 @@ task benchmark(type: Test) {
   project.properties.findAll {
     it.key.startsWith("benchmark-strip.")
   }.each {
-    newKey = it.getKey().substring("benchmark-strip.".length())
+    var newKey = it.getKey().substring("benchmark-strip.".length())
     systemProperty(newKey, it.getValue())
   }
 
